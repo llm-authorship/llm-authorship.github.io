@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="description" content="LLMs Meet Misinformation"> -->
+  <meta name="keywords" content="Authorship Attribution, LLM, Large Language Model, Computational Linguistic">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<!-- <meta name="generator" content="Jekyll v3.9.3" /> -->
+<meta property="og:title" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://github.com/llm-authorship" />
+<meta property="og:url" content="https://github.com/llm-authorship/" />
+<meta property="og:site_name" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://github.com/llm-authorship/static/images/framework.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
+<meta name="twitter:description" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
+<meta name="twitter:site" content="@CanyuChen3" />
+<meta name="twitter:image" content="https://github.com/llm-authorship/static/images/framework.png" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges","name":"Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges","url":"https://github.com/llm-authorship/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Carousel</title>
+
+<style>
+  .carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .caption {
+    text-align: center;
+    padding: 5px;
+    background-color: #ddd;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+</style>
+
+<style>
+  .author-block, .institution-block {
+    position: relative;
+    display: inline-block;
+  }
+
+  .author-block sup, .institution-block sup {
+    font-size: smaller;
+    top: -0.6em;
+  }
+
+  .publication-authors a, .publication-authors span {
+    margin-right: 5px;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #6e4949;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  .carousel-dots {
+    text-align: center;
+  }
+
+</style>
+
+</head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Navigation Bar</title>
+  <style>
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+      }
+
+      li {
+          float: left;
+      }
+
+      li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+
+      li a:hover {
+          background-color: #111;
+      }
+  </style>
+</head>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="./index.html#Authorship-Attribution-in-the-Era-of-LLMs">Survey</a></li>
+  <li><a href="./index.html#Can-LLM-identify-Authorship">LLM Authorship Paper</a></li>
+  <li><a href="./index.html#contact">Contact</a></li>
+</ul>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                <a href="https://arxiv.org/pdf/2403.08213/" target="_blank"> (New Preprint) <b>Can Large Language Models Identify Authorship?</b></a>
+                <!-- <br>
+                - A survey of the opportunities (<i>can we utilize LLMs to combat misinformation</i>) and challenges (<i>how to combat LLM-generated misinformation</i>) of combating misinformation in the age of LLMs.
+                <br> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- <img src="./static/images/logo_4.png" class="header-image" style="max-width:4cm; height: auto; vertical-align: middle; margin-right: 10px;"> -->
+            <h1 id="Authorship-Attribution-in-the-Era-of-LLMs" class="title is-1 publication-title">Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges</h1>
+            <h1 id="Authorship-Attribution-in-the-Era-of-LLMs" class="is-size-5 publication-title">TLDR: This survey paper systematically categorizing authorship attribution into four problems: attributing unknown texts to human authors, detecting LLM-generated texts, identifying specific LLMs or human authors, and classifying texts as human, machine, or co-authored by both, while also highlighting key challenges and open problems.</h1>
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://baixianghuang.github.io/" target="_blank">Baixiang Huang</a>,</span>
+                <span class="author-block">
+                  <a href="https://canyuchen.com" target="_blank">Canyu Chen</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.cs.emory.edu/~kshu5/" target="_blank">Kai Shu</a></span>
+              </div>
+              <div class="is-size-5 publication-institutions">
+                <span class="institution-block">Illinois Institute of Technology</span>
+              </div>          
+              <br>
+            <!-- Publication links -->
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="static/pdf/.pdf" target="_blank" class="external-link button">                 
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/" target="_blank" class="external-link button">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/llm-authorship/survey" target="_blank" class="external-link button">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Paper List</span>
+                  </a>
+              </span>
+              <br>              
+              <!-- <span class="link-block">
+                <a href="https://drive.google.com/file/d/1pUkoDYDxeWl4nhCy74jaDIhxBW7_Sy4g/view?usp=sharing" target="_blank" class="external-link button">                 
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://x.com/"
+                   class="external-link button">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>post</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.linkedin.com/posts/"
+                   class="external-link button">
+                  <span class="icon">
+                      <i class="fab fa-linkedin"></i>
+                  </span>
+                  <span>post</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop" style="text-align: left;">
+      <figure style="display: inline-block;">
+        <img src="static/images/framework.png" alt="framework" style="max-width: 100%; height: auto;">
+        <figcaption>
+          Representative Problems in Authorship Attribution: 
+          <ol>
+              <li>Human-written Text Attribution (attributing unknown texts to human authors)</li>
+              <li>LLM-generated Text Detection (detecting if texts are generated by LLMs)</li>
+              <li>LLM-generated Text Attribution (identifying the specific LLM or human responsible for a text)</li>
+              <li>Human-LLM Co-authored Text Attribution (classifying texts as human-written, machine-generated, or a combination of both)</li>
+          </ol>
+          <!-- <em>The categorization of these problems becomes increasingly complex, as indicated by the arrow, balancing complexity with practicality.</em> -->
+      </figcaption>
+      </figure>
+    </div>
+    <br><br>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Accurate attribution of authorship is crucial for maintaining the integrity of digital content, improving forensic investigations, and mitigating the risks of misinformation and plagiarism. Addressing the imperative need for proper authorship attribution is essential to uphold the credibility and accountability of authentic authorship. The rapid advancements of Large Language Models (LLMs) have blurred the lines between human and machine authorship, posing significant challenges for traditional methods. We presents a comprehensive literature review that examines the latest research on authorship attribution in the era of LLMs. This survey systematically explores the landscape of this field by categorizing four representative problems: (1) Human-written Text Attribution; (2) LLM-generated Text Detection; (3) LLM-generated Text Attribution; and (4) Human-LLM Co-authored Text Attribution. We also discuss the challenges related to ensuring the generalization and explainability of authorship attribution methods. Generalization requires the ability to generalize across various domains, while explainability emphasizes providing transparent and understandable insights into the decisions made by these models. By evaluating the strengths and limitations of existing methods and benchmarks, we identify key open problems and future research directions in this field. This literature review serves a roadmap for researchers and practitioners interested in understanding the state of the art in this rapidly evolving field.
+              <!-- </span> -->
+            </p>                   
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </section>
+  <section class="section"> -->
+    <!-- <br>
+    <br>
+    <div class="container is-max-desktop">
+      <figure>
+        <img src="static/images/framework.png" alt="survey">
+      </figure>
+    </div> -->
+  <!-- </section> -->
+  <!-- </section>
+  <section class="section"> -->
+    <br>
+    <br>
+    <div class="container is-max-desktop">
+      <div style="text-align:center">
+        <h2 class="title is-3">Contributions</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+          <li>We provide a timely overview to discuss the challenges and opportunities presented by LLMs in the field of authorship attribution. By systematically categorizing authorship attribution into four problems and balancing problem complexity with practicality, we reveal insights into the evolving filed of authorship attribution in the era of LLMs.</li>
+          <li>We offer a comprehensive comparison of state-of-the-art methodologies, datasets, benchmarks, and commercial tools used in authorship attribution. This analysis not only improves the understanding of authorship attribution but also provides a valuable resource for researchers and practitioners to use as guidelines for approaching this direction.</li>
+          <li>We discuss open issues and provide future directions by considering crucial aspects such as generalization, explainability, and interdisciplinary perspectives. We also discuss the broader implications of authorship attribution in real-world applications. This holistic approach ensures that authorship attribution not only yields accurate results but also provides insights that are explainable and socially relevant.</li>
+        <br/>
+      </div>
+    </div>
+  </section>
+
+
+<section class="section">
+  <br>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+    </code></pre>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <!-- <div class="content has-text-justified">
+              <a href="https://arxiv.org/pdf/2403.08213/" target="_blank"> (New Preprint) <b>Can Large Language Models Identify Authorship?</b></a>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- <img src="./static/images/logo_4.png" class="header-image" style="max-width:4cm; height: auto; vertical-align: middle; margin-right: 10px;"> -->
+          <h1 id="Can-LLM-identify-Authorship" class="title is-1 publication-title">Can Large Language Models Identify Authorship?</h1>
+          <!-- <h1 id="Can-LLM-identify-Authorship" class="is-size-5 publication-title">TLDR: </h1> -->
+            <!-- <br> -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://baixianghuang.github.io/" target="_blank">Baixiang Huang</a>,</span>
+              <span class="author-block">
+                <a href="https://canyuchen.com" target="_blank">Canyu Chen</a>,</span>
+              <span class="author-block">
+                <a href="https://www.cs.emory.edu/~kshu5/" target="_blank">Kai Shu</a></span>
+            </div>
+            <div class="is-size-5 publication-institutions">
+              <span class="institution-block">Illinois Institute of Technology</span>
+            </div>          
+            <!-- <br> -->
+          <!-- Publication links -->
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2403.08213.pdf" target="_blank" class="external-link button">                 
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- <span class="link-block">
+              <a href="https://arxiv.org/abs/" target="_blank" class="external-link button">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span> -->
+            <span class="link-block">
+              <a href="https://github.com/baixianghuang/authorship-llm" target="_blank" class="external-link button">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code & Data</span>
+                </a>
+            </span>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop" style="text-align: justify;">
+    <figure style="display: inline-block;">
+      <img src="static/images/lip.png" alt="framework" style="max-width: 100%; height: auto;">
+      <figcaption>
+      An illustration of Authorship Analysis through Linguistically Informed Prompting (LIP) technique on the Blog Dataset: The LLM correctly identifies that the two input texts are written by the same author and provides explanations. Linguistic features detected by the model are highlighted in different colors.
+      </figcaption>
+    </figure>
+  </div>
+  <br><br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The ability to accurately identify authorship is crucial for verifying content authenticity and mitigating misinformation. Large Language Models (LLMs) have demonstrated exceptional capacity for reasoning and problem-solving. However, their potential in authorship analysis remains under-explored. Traditional studies have depended on hand-crafted stylistic features, whereas state-of-the-art approaches leverage text embeddings from pre-trained language models. These methods, which typically require fine-tuning on labeled data, often suffer from performance degradation in cross-domain applications and provide limited explainability. This work seeks to address three research questions: (1) Can LLMs perform zero-shot, end-to-end authorship verification effectively? (2) Are LLMs capable of accurately attributing authorship among multiple candidates authors (e.g., 10 and 20)? (3) How can LLMs provide explainability in authorship analysis, particularly through the role of linguistic features? Moreover, we investigate the integration of explicit linguistic features to guide LLMs in their reasoning processes. Our assessment demonstrates LLMs' proficiency in both tasks without the need for domain-specific fine-tuning, providing insights into their decision-making via a detailed analysis of linguistic features. This establishes a new benchmark for future research on LLM-based authorship analysis.
+          </p>                   
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2>
+<pre><code>
+@misc{huang2024largelanguagemodelsidentify,
+    title={Can Large Language Models Identify Authorship?}, 
+    author={Baixiang Huang and Canyu Chen and Kai Shu},
+    year={2024},
+    eprint={2403.08213},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL},
+    url={https://arxiv.org/abs/2403.08213}, 
+}
+</code></pre>
+</div>
+</section>
+
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+  <tbody>
+      <tr>
+        <td style="padding:0px; padding-bottom: 30px;"> <!-- Add padding-bottom here -->
+              <br>
+              <br>
+              <div>
+                <!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=310&t=tt&d=IRFkviXk5-1EAEz8WbwUa8E4k8n_39ciQ8oT_G9AL2o&co=d093db'></script> -->
+              </div>
+          </td>
+      </tr>
+  </tbody>
+</table>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <!-- <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p> -->
+            <p>
+              Acknowledgment: This website use code from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+              <!-- we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<!-- <script>
+  let slideIndexes = { 'carousel1': 1, 'carousel2': 1 };
+  
+  function moveSlide(n, carouselId) {
+    let slides = document.querySelector('#' + carouselId + ' .carousel-inner').getElementsByClassName("carousel-item");
+    slideIndexes[carouselId] += n;
+    if (slideIndexes[carouselId] > slides.length) {slideIndexes[carouselId] = 1}
+    if (slideIndexes[carouselId] < 1) {slideIndexes[carouselId] = slides.length}
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndexes[carouselId] - 1].style.display = "block";
+  }
+  
+  // Initial display
+  document.addEventListener('DOMContentLoaded', function() {
+    moveSlide(0, 'carousel1');
+    moveSlide(0, 'carousel2');
+  });
+</script> -->
+
+<!-- Default Statcounter code for llm-editing
+https://github.com/llm-authorship/ -->
+<!-- <script type="text/javascript">
+  var sc_project=13021589; 
+  var sc_invisible=1; 
+  var sc_security="137f28b6"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/13021589/0/137f28b6/1/"
+  alt="Web Analytics"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> -->
+  <!-- End of Statcounter Code -->
+
+</body>
+<script>
+  function changeContent() {
+    const dropdown = document.getElementById("dropdown");
+    const selected = dropdown.value;
+    const sections = ["example_1", "example_2", "example_3", "example_4", "example_5", "example_6", "example_7", "example_8", "example_9", "example_10", "example_11", "example_12", "example_13", "example_14"];
+
+    sections.forEach((section) => {
+      document.getElementById(section).style.display = (section === selected) ? "block" : "none";
+    });
+  }
+</script>
+
+
+
+
+</html>
