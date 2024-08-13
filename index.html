@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- <meta name="description" content="LLMs Meet Misinformation"> -->
+  <meta name="description" content="LLMs Meet Authorship Attribution">
   <meta name="keywords" content="Authorship Attribution, LLM, Large Language Model, Computational Linguistic">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges</title>
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
 <meta name="twitter:description" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
-<meta name="twitter:site" content="@CanyuChen3" />
+<meta name="twitter:site" content="@BaixHuang" />
 <meta name="twitter:image" content="https://github.com/llm-authorship/static/images/framework.png" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","headline":"Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges","name":"Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges","url":"https://github.com/llm-authorship/"}</script>
@@ -159,6 +159,8 @@
 <ul>
   <li><a href="#home">Home</a></li>
   <li><a href="./index.html#Authorship-Attribution-in-the-Era-of-LLMs">Survey</a></li>
+  <li><a href="#Benchmarks">Benchmarks</a></li>
+  <li><a href="#Detectors">Detectors</a></li>
   <li><a href="./index.html#Can-LLM-identify-Authorship">LLM Authorship Paper</a></li>
   <li><a href="./index.html#contact">Contact</a></li>
 </ul>
@@ -168,13 +170,12 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
+            
             <div class="columns is-centered has-text-centered">
               <div class="column is-four-fifths">
                 <div class="content has-text-justified">
-                <a href="https://arxiv.org/pdf/2403.08213/" target="_blank"> (New Preprint) <b>Can Large Language Models Identify Authorship?</b></a>
-                <!-- <br>
-                - A survey of the opportunities (<i>can we utilize LLMs to combat misinformation</i>) and challenges (<i>how to combat LLM-generated misinformation</i>) of combating misinformation in the age of LLMs.
-                <br> -->
+                  <!-- 📢New Preprint Available: 
+                  <a href="https://arxiv.org/pdf/2403.08213/" target="_blank"> Can Large Language Models Identify Authorship?</a> -->
                 </div>
               </div>
             </div>
@@ -205,14 +206,7 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/" target="_blank" class="external-link button">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
+              
               <span class="link-block">
                 <a href="https://github.com/llm-authorship/survey" target="_blank" class="external-link button">
                   <span class="icon">
@@ -221,8 +215,16 @@
                   <span>Paper List</span>
                   </a>
               </span>
-              <br>              
+              <br>
               <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/" target="_blank" class="external-link button">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
                 <a href="https://drive.google.com/file/d/1pUkoDYDxeWl4nhCy74jaDIhxBW7_Sy4g/view?usp=sharing" target="_blank" class="external-link button">                 
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -286,18 +288,18 @@
         </div>
       </div>
     </div>
-  <!-- </section>
-  <section class="section"> -->
-    <!-- <br>
-    <br>
-    <div class="container is-max-desktop">
-      <figure>
-        <img src="static/images/framework.png" alt="survey">
-      </figure>
-    </div> -->
-  <!-- </section> -->
-  <!-- </section>
-  <section class="section"> -->
+    <!-- </section>
+    <section class="section"> -->
+      <!-- <br>
+      <br>
+      <div class="container is-max-desktop">
+        <figure>
+          <img src="static/images/framework.png" alt="survey">
+        </figure>
+      </div> -->
+    <!-- </section> -->
+    <!-- </section>
+    <section class="section"> -->
     <br>
     <br>
     <div class="container is-max-desktop">
@@ -316,9 +318,381 @@
 
 
 <section class="section">
-  <br>
+  <div class="container is-max-desktop content">
+    <h2 id="Benchmarks" class="title">Benchmarks</h2>
+    <p>The table below is a summary of Authorship Attribution Datasets and Benchmarks with LLM-Generated Text. Size is shown as the sum of LLM-generated and human-written texts (with the percentage of human-written texts in parentheses). Language is displayed using the two-letter ISO 639 abbreviation. Columns P2, P3, and P4 indicate whether the dataset supports problems described in Problem 2, 3, and 4, respectively.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Domain</th>
+          <th>Size</th>
+          <th>Length</th>
+          <th>Language</th>
+          <th>Model</th>
+          <th>P2</th>
+          <th>P3</th>
+          <th>P4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2109.13296">TuringBench</a></td>
+          <td>News</td>
+          <td>168,612 (5.2%)</td>
+          <td>100 to 400 words</td>
+          <td>en</td>
+          <td>GPT-1,2,3, GROVER, CTRL, XLM, XLNET, FAIR, TRANSFORMER-XL, PPLM</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0251415">TweepFake</a></td>
+          <td>Social media</td>
+          <td>25,572 (50.0%)</td>
+          <td>less than 280 characters</td>
+          <td>en</td>
+          <td>GPT-2, RNN, Markov, LSTM, CharRNN</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2304.07666">ArguGPT</a></td>
+          <td>Academic essays</td>
+          <td>8,153 (49.5%)</td>
+          <td>300 words on average</td>
+          <td>en</td>
+          <td>GPT2-Xl, text-babbage-001, text-curie-001, davinci-001,002,003, GPT-3.5-Turbo</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2309.11285">AuTexTification</a></td>
+          <td>Tweets, reviews, news, legal, and how-to articles</td>
+          <td>163,306 (42.5%)</td>
+          <td>20 to 100 tokens</td>
+          <td>en, es</td>
+          <td>BLOOM, GPT-3</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2304.12008">CHEAT</a></td>
+          <td>Academic paper abstracts</td>
+          <td>50,699 (30.4%)</td>
+          <td>163.9 words on average</td>
+          <td>en</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2306.05524">GPABench2</a></td>
+          <td>Academic paper abstracts</td>
+          <td>2.385M (6.3%)</td>
+          <td>70 to 350 words</td>
+          <td>en</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2305.15047">Ghostbuster</a></td>
+          <td>News, student essays, creative writing</td>
+          <td>23,091 (87.0%)</td>
+          <td>77 to 559 (median words per document)</td>
+          <td>en</td>
+          <td>ChatGPT, Claude</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2301.07597">HC3</a></td>
+          <td>Reddit, Wikipedia, medicine, finance</td>
+          <td>125,230 (64.5%)</td>
+          <td>25 to 254 words</td>
+          <td>en, zh</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2309.02731">HC3 Plus</a></td>
+          <td>News, social media</td>
+          <td>214,498</td>
+          <td>N/A</td>
+          <td>en, zh</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2310.01307">HC-Var</a></td>
+          <td>News, reviews, essays, QA</td>
+          <td>144k (68.8%)</td>
+          <td>50 to 200 words</td>
+          <td>en</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2310.16746">HANSEN</a></td>
+          <td>Transcripts of speech (spoken text), statements (written text)</td>
+          <td>535k (96.1%)</td>
+          <td>less than 1k tokens</td>
+          <td>en</td>
+          <td>ChatGPT, PaLM2, Vicuna-13B</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2305.14902">M4</a></td>
+          <td>Wikipedia, WikiHow, Reddit, QA, news, paper abstracts, peer reviews</td>
+          <td>147,895 (24.2%)</td>
+          <td>more than 1k characters</td>
+          <td>ar, bg, en, id, ru, ur, zh</td>
+          <td>davinci-003, ChatGPT, GPT-4, Cohere, Dolly2, BLOOMz</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2303.14822">MGTBench</a></td>
+          <td>News, student essays, creative writing</td>
+          <td>21k (14.3%)</td>
+          <td>1 to 500 words</td>
+          <td>en</td>
+          <td>ChatGPT, ChatGLM, Dolly, GPT4All, StableLM, Claude</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2310.13606">MULTITuDE</a></td>
+          <td>News</td>
+          <td>74,081 (10.8%)</td>
+          <td>200 to 512 tokens</td>
+          <td>ar, ca, cs, de, en, es, nl, pt, ru, uk, zh</td>
+          <td>GPT-3,4, ChatGPT, Llama-65B, Alpaca-LoRa-30B, Vicuna-13B, OPT-66B, OPT-IML-Max-1.3B</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/pdf/2305.07969">OpenGPTText</a></td>
+          <td>OpenWebText</td>
+          <td>58,790 (50.0%)</td>
+          <td>less than 2k words</td>
+          <td>en</td>
+          <td>ChatGPT</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2311.08723">OpenLLMText</a></td>
+          <td>OpenWebText</td>
+          <td>344,530 (20%)</td>
+          <td>512 tokens</td>
+          <td>en</td>
+          <td>ChatGPT, PaLM, Llama, GPT2-XL</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://aclanthology.org/2023.trustnlp-1.17/">Scientic Paper</a></td>
+          <td>Scientific papers</td>
+          <td>29k (55.2%)</td>
+          <td>900 tokens on average</td>
+          <td>en</td>
+          <td>SCIgen, GPT-2,3, ChatGPT, Galactica</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2405.07940">RAID</a></td>
+          <td>News, Wikipedia, paper abstracts, recipes, Reddit, poems, book summaries, movie reviews</td>
+          <td>523,985 (2.9%)</td>
+          <td>323 tokens on average</td>
+          <td>cs, de, en</td>
+          <td>GPT-2,3,4, ChatGPT, Mistral-7B, MPT-30B, Llama2-70B, Cohere command and chat</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2402.11175">M4GT-Bench</a></td>
+          <td>Wikipedia, Wikihow, Reddit, arXiv abstracts, academic paper reviews, student essays</td>
+          <td>5,368,998 (96.6%)</td>
+          <td>more than 50 characters</td>
+          <td>ar, bg, de, en, id, it, ru, ur, zh</td>
+          <td>ChatGPT, davinci-003, GPT-4, Cohere, Dolly-v2, BLOOMz</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2305.13242">MAGE</a></td>
+          <td>Reddit, reviews, news, QA, story writing, Wikipedia, academic paper abstracts</td>
+          <td>448,459 (34.4%)</td>
+          <td>263 words on average</td>
+          <td>en</td>
+          <td>GPT, Llama, GLM-130B, FLAN-T5 OPT, T0, BLOOM-7B1, GPT-J-6B, GPT-NeoX-2</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://aclanthology.org/2024.findings-naacl.29/">MIXSET</a></td>
+          <td>Email, news, game reviews, academic paper abstracts, speeches, blogs</td>
+          <td>3.6k (16.7%)</td>
+          <td>50 to 250 words</td>
+          <td>en</td>
+          <td>GPT-4, Llama2</td>
+          <td>✓</td>
+          <td></td>
+          <td>✓</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 id="Detectors" class="title">Detectors</h2>
+    <p>The Table below presents an overview of LLM-Generated Text Detectors.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Detector</th>
+          <th>Price</th>
+          <th>API</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPTZero</td>
+          <td>150k words at $10/month, 10k words for free per month</td>
+          <td>Yes</td>
+          <td><a href="https://gptzero.me/">https://gptzero.me/</a></td>
+        </tr>
+        <tr>
+          <td>ZeroGPT</td>
+          <td>100k characters for $9.99, 15k characters for free</td>
+          <td>Yes</td>
+          <td><a href="https://www.zerogpt.com/">https://www.zerogpt.com/</a></td>
+        </tr>
+        <tr>
+          <td>Sapling</td>
+          <td>50k characters for $25, 2k characters for free</td>
+          <td>Yes</td>
+          <td><a href="https://sapling.ai/ai-content-detector">https://sapling.ai/ai-content-detector</a></td>
+        </tr>
+        <tr>
+          <td>Originality.AI</td>
+          <td>200k words at $14.95/month</td>
+          <td>Yes</td>
+          <td><a href="https://originality.ai/">https://originality.ai/</a></td>
+        </tr>
+        <tr>
+          <td>CopyLeaks</td>
+          <td>300k words at $7.99/month</td>
+          <td>Yes</td>
+          <td><a href="https://copyleaks.com/ai-content-detector">https://copyleaks.com/ai-content-detector</a></td>
+        </tr>
+        <tr>
+          <td>Winston</td>
+          <td>80k words at $12/month</td>
+          <td>Yes</td>
+          <td><a href="https://gowinston.ai/">https://gowinston.ai/</a></td>
+        </tr>
+        <tr>
+          <td>GPT Radar</td>
+          <td>$0.02/100 tokens</td>
+          <td>N/A</td>
+          <td><a href="https://gptradar.com/">https://gptradar.com/</a></td>
+        </tr>
+        <tr>
+          <td>Turnitin’s AI detector</td>
+          <td>License required</td>
+          <td>N/A</td>
+          <td><a href="https://www.turnitin.com/solutions/topics/ai-writing/ai-detector/">https://www.turnitin.com/solutions/topics/ai-writing/ai-detector/</a></td>
+        </tr>
+        <tr>
+          <td>GPT-2 Output Detector</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://github.com/openai/gpt-2-output-dataset/tree/master/detector">https://github.com/openai/gpt-2-output-dataset/tree/master/detector</a></td>
+        </tr>
+        <tr>
+          <td>Crossplag</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://crossplag.com/ai-content-detector/">https://crossplag.com/ai-content-detector/</a></td>
+        </tr>
+        <tr>
+          <td>CatchGPT</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://www.catchgpt.ai/">https://www.catchgpt.ai/</a></td>
+        </tr>
+        <tr>
+          <td>Quil.org</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://aiwritingcheck.org/">https://aiwritingcheck.org/</a></td>
+        </tr>
+        <tr>
+          <td>Scribbr</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://www.scribbr.com/ai-detector/">https://www.scribbr.com/ai-detector/</a></td>
+        </tr>
+        <tr>
+          <td>Draft Goal</td>
+          <td>Free</td>
+          <td>N/A</td>
+          <td><a href="https://detector.dng.ai/">https://detector.dng.ai/</a></td>
+        </tr>
+        <tr>
+          <td>Writefull</td>
+          <td>Free</td>
+          <td>Yes</td>
+          <td><a href="https://x.writefull.com/gpt-detector">https://x.writefull.com/gpt-detector</a></td>
+        </tr>
+        <tr>
+          <td>Phrasly</td>
+          <td>Free</td>
+          <td>Yes</td>
+          <td><a href="https://phrasly.ai/ai-detector">https://phrasly.ai/ai-detector</a></td>
+        </tr>
+        <tr>
+          <td>Writer</td>
+          <td>Free</td>
+          <td>Yes</td>
+          <td><a href="https://writer.com/ai-content-detector">https://writer.com/ai-content-detector</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
