@@ -16,7 +16,6 @@
 <meta property="og:url" content="https://github.com/llm-authorship/" />
 <meta property="og:site_name" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
 <meta property="og:type" content="website" />
-<!-- <meta property="og:image" content="https://github.com/llm-authorship/static/images/framework.png" /> -->
 <meta property="og:image" content="https://github.com/llm-authorship/static/images/framework.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
@@ -125,7 +124,6 @@
 </style>
 
 </head>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,31 +132,34 @@
       .navbar {
           position: fixed;
           top: 0;
+          left: 0;
           width: 100%;
           z-index: 1000;
       }
 
-      ul {
+      .navbar ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
           overflow: hidden;
           background-color: #333;
+          display: flex;
+          width: 100%;
       }
 
-      li {
-          float: left;
+      .navbar li {
+          flex-grow: 0;
       }
 
-      li a {
+      .navbar li a {
           display: block;
           color: rgb(255, 255, 255);
-          text-align: center;
+          text-align: left;
           padding: 14px 16px;
           text-decoration: none;
       }
 
-      li a:hover {
+      .navbar li a:hover {
           background-color: #111;
       }
 
