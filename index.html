@@ -16,6 +16,7 @@
 <meta property="og:url" content="https://github.com/llm-authorship/" />
 <meta property="og:site_name" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
 <meta property="og:type" content="website" />
+<!-- <meta property="og:image" content="https://github.com/llm-authorship/static/images/framework.png" /> -->
 <meta property="og:image" content="https://github.com/llm-authorship/static/images/framework.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges" />
@@ -130,6 +131,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horizontal Navigation Bar</title>
   <style>
+      .navbar {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+      }
+
       ul {
           list-style-type: none;
           margin: 0;
@@ -153,18 +161,24 @@
       li a:hover {
           background-color: #111;
       }
+
+      body {
+          padding-top: 50px; /* Adjust this value based on the height of your navbar */
+      }
   </style>
 </head>
 
-<ul>
-  <!-- <li><a href="#home">Home</a></li> -->
-  <li><a href="#Authorship-Attribution-in-the-Era-of-LLMs">Survey</a></li>
-  <li><a href="#Benchmarks">Benchmarks</a></li>
-  <li><a href="#Detectors">Detectors</a></li>
-  <li><a href="#canllm-identify-authorship">Our Related Work (EMNLP)</a></li>
-  <li><a href="#BibTeX">BibTex</a></li>
-  <li><a href="#Contact">Contact</a></li>
-</ul>
+<nav class="navbar">
+  <ul>
+    <!-- <li><a href="#home">Home</a></li> -->
+    <li><a href="#Authorship-Attribution-in-the-Era-of-LLMs">Survey</a></li>
+    <li><a href="#Benchmarks">Benchmarks</a></li>
+    <li><a href="#Detectors">Detectors</a></li>
+    <li><a href="#canllm-identify-authorship">Our Related Work (EMNLP)</a></li>
+    <li><a href="#BibTeX">BibTex</a></li>
+    <li><a href="#Contact">Contact</a></li>
+  </ul>
+</nav>
 
   <section class="hero">
     <div class="hero-body">
