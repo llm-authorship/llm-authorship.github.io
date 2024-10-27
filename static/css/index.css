@@ -1,5 +1,16 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Lato", sans-serif;
+}
+
+.fontGrad-bg{
+  /* font-size: 30px; */
+  font-weight: 700;
+  /* background-image: -webkit-linear-gradient(135deg, #c850c0, #47b5d6);
+  background-color: #4158D0; */
+  background-image: -webkit-linear-gradient(135deg, #00DBDE 0%, #FC00FF 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -157,9 +168,25 @@ body {
 }
 
 
-mydiv {
-  background-color: rgb(225, 225, 225);
-  /* width: 300px;
-  padding: 50px;
-  margin: 20px; */
+h2 {
+  font-weight: bold;
+  font-size: 150%!important;
+}
+
+table {
+  font-size: 92%!important;
+}
+
+select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 25ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 100%;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
 }
